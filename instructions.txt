@@ -1,1 +1,12 @@
 CSRF = Cross Site Request Forgeory Attack 
+
+
+https://www.geeksforgeeks.org/django-forms/
+
+
+https://media.geeksforgeeks.org/wp-content/uploads/20191113140709/create-django-form.png
+
+https://docs.djangoproject.com/en/4.1/ref/urls/
+
+
+https://github.com/anildalar/Django-Form
