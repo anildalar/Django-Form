@@ -1,17 +1,21 @@
 from django import forms
 
+from myform.models import StudentModel
+
 # class ChildClass(module.ParentClass):
 
-class InputForm(forms.Form):
+class InputForm(forms.ModelForm):
     #1. Properties
-    firstname = forms.CharField(max_length=255)
-    lastname = forms.CharField(max_length=255)
-    roll_no = forms.IntegerField(help_text="Please enter number only") # 1--->
-    password = forms.CharField(widget=forms.PasswordInput())
+   
     
     #constructor
     
     #methods
     
     #Nested Class
+    class Meta():
+        #1. Properties
+        model = StudentModel
+        fields = "__all__"    
+        pass
     pass

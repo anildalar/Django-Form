@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from myform.forms import InputForm
 
@@ -6,10 +6,17 @@ from myform.forms import InputForm
 
 
 def myView(request):
-    print('Hello')
-    context = {}
-    # Creating an object form the class
-    # object = ClassName();
-    context['anil'] = InputForm()
-    # Every function return something
-    return render(request,'index.html',context);
+    if request.method == "POST": 
+        print(request.POST) 
+        form = InputForm(request.POST)  
+        if form.is_valid():  
+            try:
+                student = form.save(commit=True)
+                student.save()
+                return redirect('/home')  
+            except:  
+                pass  
+    else:  
+        form = InputForm()  
+        return render(request,'index.html',{'form':form}) 
+

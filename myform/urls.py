@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 from . import views
 
-    #path(route, view, kwargs=None, name=None)
+#path(route, view, kwargs=None, name=None)
 
 def myHomeFunc(request):
     
