@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-
+from django.contrib import messages
 from myform.forms import InputForm
 
 # Create your views here.
@@ -13,6 +13,8 @@ def myView(request):
             try:
                 student = form.save(commit=True)
                 student.save()
+                # Message register
+                messages.success(request, "Student Registed Successfully" )
                 return redirect('/home')  
             except:  
                 pass  

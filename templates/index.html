@@ -6,7 +6,23 @@
 
     <body>
         <form method="post" action="">
+            <style>
+                li.success{
+                    background-color:green;
+                    font-weight:bold;
+                    list-style:none;
+                    color:#fff;
+                    padding:30px;
+                }
+            </style>
             {% csrf_token %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <table>
                 {{ form.as_table }}
             </table>
